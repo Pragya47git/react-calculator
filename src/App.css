@@ -1,38 +1,112 @@
-.App {
-  text-align: center;
+body, html, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background: #f9f9f9;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+.app-background {
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  min-height: 100vh;
 }
 
-.App-link {
-  color: #61dafb;
+.calc {
+  background: #222;
+  padding: 32px 24px 24px 24px;
+  border-radius: 18px;
+  width: 400px;
+  box-shadow: 0 4px 28px rgba(0, 0, 0, 0.14);
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.calc input[type="text"] {
+  width: 100%;
+  height: 64px;
+  margin-bottom: 22px;
+  font-size: 2.2rem;
+  font-weight: 600;
+  padding: 0 20px 0 14px;
+  text-align: right;
+  border: none;
+  border-radius: 8px;
+  background: #eaeaea;
+  color: #222;
+  box-sizing: border-box;
+  /* Remove any extra margin/padding that pushes it out */
+  box-shadow: none;
+  display: block;
+  /* Ensures input is not "above" the calculator visually */
+  position: static;
+}
+
+.row {
+  display: flex;
+  margin-bottom: 14px;
+}
+
+button {
+  flex: 1;
+  margin: 0 10px 0 0;
+  height: 58px;
+  font-size: 1.45rem;
+  font-weight: 500;
+  border: none;
+  border-radius: 9px;
+  background-color: #444;
+  color: #eee;
+  cursor: pointer;
+  transition: background-color 0.17s, transform 0.12s;
+}
+
+button:last-child {
+  margin-right: 0;
+}
+
+button:hover,
+button:focus {
+  background-color: #666;
+  transform: scale(1.04);
+  outline: none;
+}
+
+button.clear {
+  background-color: #b71313;
+  flex: 2;
+  margin-right: 10px;
+}
+
+button.clear:hover,
+button.clear:focus {
+  background-color: #ff3030;
+}
+
+button.equals {
+  background-color: #10c73e;
+  flex: 2;
+}
+
+button.equals:hover,
+button.equals:focus {
+  background-color: #36e060;
+}
+
+.footer {
+  margin-top: 50px;
+  text-align: center;
+  color: #444;
+  font-size: 1.18rem;
+  letter-spacing: 0.04em;
+  font-family: 'Segoe UI', 'Tahoma', 'Geneva', 'Verdana', sans-serif;
 }
